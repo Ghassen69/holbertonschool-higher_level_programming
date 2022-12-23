@@ -1,11 +1,9 @@
 #!/usr/bin/node
 
 const req = require('request');
-const url = process.argv[2]
+const url = process.argv[2];
 req.get(url, (error, res, body) => {
-  if (error) {
-    console.log(err);
-  }
+  if (error) console.log(error);
   else {
     let count = 0;
     const films = JSON.parse(body).results;
